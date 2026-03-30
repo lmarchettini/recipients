@@ -43,7 +43,7 @@ class RecipientServiceTest {
         when(validator.validate(any())).thenReturn(ValidityStatus.VALID);
 
         Recipient saved = new Recipient();
-        saved.setId("123");
+        saved.setId(123);
 
         when(repository.save(any())).thenReturn(saved);
 

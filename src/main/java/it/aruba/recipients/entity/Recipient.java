@@ -16,8 +16,8 @@ import lombok.NoArgsConstructor;
 public class Recipient {
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.UUID)
-	private String id;
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Integer id;
 	private String name;
 	private String surname;
 	private String digitalAddress;

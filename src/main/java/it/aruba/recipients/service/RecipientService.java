@@ -33,8 +33,12 @@ public class RecipientService {
 		ValidityStatus status = validator.validate(request.getDigitalAddress());
 		log.info("Validation result for {}: {}", request.getDigitalAddress(), status);
 
-		Recipient recipient = Recipient.builder().name(request.getName()).surname(request.getSurname())
-				.digitalAddress(request.getDigitalAddress()).validityStatus(status).build();
+		Recipient recipient = Recipient.builder()
+				.name(request.getName())
+				.surname(request.getSurname())
+				.digitalAddress(request.getDigitalAddress())
+				.validityStatus(status)
+				.build();
 
 		Recipient saved = repository.save(recipient);
 
