@@ -51,7 +51,7 @@ public class RecipientService {
 		return repository.findAll();
 	}
 
-	public Recipient getById(String id) {
+	public Recipient getById(Integer id) {
 		return repository.findById(id).orElseThrow(() -> new ResourceNotFoundException("Recipient not found"));
 	}
 }

@@ -37,7 +37,7 @@ public class RecipientController {
 	}
 
 	@GetMapping("/{id}")
-	public ResponseEntity<Recipient> getById(@PathVariable String id) {
+	public ResponseEntity<Recipient> getById(@PathVariable Integer id) {
 		Recipient recipient = service.getById(id);
 		return ResponseEntity.ok(recipient);
 	}

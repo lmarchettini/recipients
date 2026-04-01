@@ -6,6 +6,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 import it.aruba.recipients.entity.Recipient;
 
-public interface RecipientRepository extends JpaRepository<Recipient, String> {
+public interface RecipientRepository extends JpaRepository<Recipient, Integer> {
 	Optional<Recipient> findByDigitalAddress(String digitalAddress);
 }
