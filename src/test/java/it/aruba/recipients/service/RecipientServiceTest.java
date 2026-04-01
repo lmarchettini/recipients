@@ -66,4 +66,20 @@ class RecipientServiceTest {
             service.create(request);
         });
     }
+    
+    @Test
+    void shouldThrowWhenAddressInvalid() {
+
+        CreateRecipientRequest request = new CreateRecipientRequest();
+        request.setDigitalAddress("invalid");
+
+        when(repository.findByDigitalAddress(any()))
+            .thenReturn(Optional.empty());
+
+        when(validator.validate(any()))
+            .thenReturn(ValidityStatus.INVALID);
+
+        assertThrows(RuntimeException.class,
+            () -> service.create(request));
+    }
 }
